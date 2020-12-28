@@ -1,4 +1,5 @@
 import './app.scss'
+import './favicon.svg'
 
 const h1 = document.createElement('h1')
 
