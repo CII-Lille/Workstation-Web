@@ -18,7 +18,8 @@ module.exports = {
     output: {
         // Output to public/dist
         path: path.resolve(__dirname, 'public', 'dist'),
-        filename: 'js/index.js'
+        filename: 'js/index.js',
+        publicPath: '/dist/'
     },
 
     devtool: 'source-map',
@@ -82,7 +83,7 @@ module.exports = {
             },
             // url loader
             {
-                test: /\.(png|jpg|gif)$/i,
+                test: /\.(png|jpg|gif|svg)$/i,
                 use: [
                     {
                         loader: 'url-loader',
@@ -119,6 +120,8 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, 'public'),
         port: 3001,
-        watchContentBase: true
+        watchContentBase: true,
+        liveReload: true,
+        publicPath: '/dist/'
     }
 }
